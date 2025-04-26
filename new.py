@@ -3,7 +3,7 @@ import numpy as np
 import joblib  
 import re 
 
-model=joblib.load(open(r'C:\Users\Admin\Desktop\encoders\best_model_catboost.pkl','rb'))
+model=joblib.load(open(r'best_model_catboost.pkl','rb'))
 features=[
     "What is your current academic level?",
             'What is your current CGPA?',
@@ -55,7 +55,7 @@ def regex(name):
 
 def load_encoder(feature):
     feature_name=regex(feature)
-    return joblib.load(open(f'C:/Users/Admin/Desktop/encoders/{feature_name}_encoder.pkl','rb'))
+    return joblib.load(open(f'{feature_name}_encoder.pkl','rb'))
 
 def main ():
     st.set_page_config(layout='wide')
